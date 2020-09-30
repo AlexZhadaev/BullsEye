@@ -13,6 +13,8 @@
 		351D16A424EFFB440049559D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A224EFFB440049559D /* Main.storyboard */; };
 		351D16A624EFFB4B0049559D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A524EFFB4B0049559D /* Assets.xcassets */; };
 		351D16A924EFFB4B0049559D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */; };
+		354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AC25250BAB00B326DF /* AboutViewController.swift */; };
+		354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		351D16A524EFFB4B0049559D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		351D16A824EFFB4B0049559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		351D16AA24EFFB4B0049559D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354DE4AC25250BAB00B326DF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				351D16A524EFFB4B0049559D /* Assets.xcassets */,
 				351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */,
 				351D16AA24EFFB4B0049559D /* Info.plist */,
+				354DE4AC25250BAB00B326DF /* AboutViewController.swift */,
+				354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */,
 			);
 			path = BullsEye;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			files = (
 				351D16A124EFFB440049559D /* ViewController.swift in Sources */,
 				351D169D24EFFB440049559D /* AppDelegate.swift in Sources */,
+				354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */,
 				351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */,
+				354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
