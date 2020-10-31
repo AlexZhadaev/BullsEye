@@ -13,6 +13,7 @@
 		351D16A424EFFB440049559D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A224EFFB440049559D /* Main.storyboard */; };
 		351D16A624EFFB4B0049559D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A524EFFB4B0049559D /* Assets.xcassets */; };
 		351D16A924EFFB4B0049559D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */; };
+		353E4574254DAFA600A27368 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 353E4573254DAFA500A27368 /* BullsEye.html */; };
 		354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AC25250BAB00B326DF /* AboutViewController.swift */; };
 		354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		351D16A524EFFB4B0049559D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		351D16A824EFFB4B0049559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		351D16AA24EFFB4B0049559D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		353E4573254DAFA500A27368 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		354DE4AC25250BAB00B326DF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,17 +62,26 @@
 		351D169B24EFFB440049559D /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
-				351D169C24EFFB440049559D /* AppDelegate.swift */,
-				351D169E24EFFB440049559D /* SceneDelegate.swift */,
+				353E4576254DB5C000A27368 /* Support */,
 				351D16A024EFFB440049559D /* ViewController.swift */,
-				351D16A224EFFB440049559D /* Main.storyboard */,
-				351D16A524EFFB4B0049559D /* Assets.xcassets */,
-				351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */,
-				351D16AA24EFFB4B0049559D /* Info.plist */,
 				354DE4AC25250BAB00B326DF /* AboutViewController.swift */,
 				354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */,
+				351D16A224EFFB440049559D /* Main.storyboard */,
+				351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */,
 			);
 			path = BullsEye;
+			sourceTree = "<group>";
+		};
+		353E4576254DB5C000A27368 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				351D169C24EFFB440049559D /* AppDelegate.swift */,
+				351D169E24EFFB440049559D /* SceneDelegate.swift */,
+				351D16A524EFFB4B0049559D /* Assets.xcassets */,
+				351D16AA24EFFB4B0049559D /* Info.plist */,
+				353E4573254DAFA500A27368 /* BullsEye.html */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				351D16A924EFFB4B0049559D /* LaunchScreen.storyboard in Resources */,
+				353E4574254DAFA600A27368 /* BullsEye.html in Resources */,
 				351D16A624EFFB4B0049559D /* Assets.xcassets in Resources */,
 				351D16A424EFFB440049559D /* Main.storyboard in Resources */,
 			);
@@ -294,7 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q37PJY8G6K;
-				INFOPLIST_FILE = BullsEye/Info.plist;
+				INFOPLIST_FILE = BullsEye/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q37PJY8G6K;
-				INFOPLIST_FILE = BullsEye/Info.plist;
+				INFOPLIST_FILE = BullsEye/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
