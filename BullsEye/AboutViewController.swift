@@ -24,6 +24,11 @@ class AboutViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func newAuthor(_ sender: Any) {
+        let vc = AboutAuthorNewViewController()
+        present(vc, animated: true)
+    }
+    
     fileprivate func webViewSetup() {
         if let htmlPath = Bundle.main.path(forResource: "BullsEye", ofType: "html") {
             let url = URL(fileURLWithPath: htmlPath)

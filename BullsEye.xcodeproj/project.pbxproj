@@ -14,6 +14,8 @@
 		351D16A624EFFB4B0049559D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A524EFFB4B0049559D /* Assets.xcassets */; };
 		351D16A924EFFB4B0049559D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */; };
 		353E4574254DAFA600A27368 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 353E4573254DAFA500A27368 /* BullsEye.html */; };
+		353E458125531BF400A27368 /* AboutAuthorNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */; };
+		353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353E458325531E7700A27368 /* AboutAuthorNewView.swift */; };
 		354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AC25250BAB00B326DF /* AboutViewController.swift */; };
 		354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		351D16A824EFFB4B0049559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		351D16AA24EFFB4B0049559D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		353E4573254DAFA500A27368 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
+		353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorNewViewController.swift; sourceTree = "<group>"; };
+		353E458325531E7700A27368 /* AboutAuthorNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorNewView.swift; sourceTree = "<group>"; };
 		354DE4AC25250BAB00B326DF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 				354DE4AC25250BAB00B326DF /* AboutViewController.swift */,
 				354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */,
 				351D16A224EFFB440049559D /* Main.storyboard */,
+				353E458625531E7E00A27368 /* AboutAuthor */,
 				351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */,
 			);
 			path = BullsEye;
@@ -82,6 +87,15 @@
 				353E4573254DAFA500A27368 /* BullsEye.html */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		353E458625531E7E00A27368 /* AboutAuthor */ = {
+			isa = PBXGroup;
+			children = (
+				353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */,
+				353E458325531E7700A27368 /* AboutAuthorNewView.swift */,
+			);
+			path = AboutAuthor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +172,10 @@
 			files = (
 				351D16A124EFFB440049559D /* ViewController.swift in Sources */,
 				351D169D24EFFB440049559D /* AppDelegate.swift in Sources */,
+				353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */,
 				354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */,
 				351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */,
+				353E458125531BF400A27368 /* AboutAuthorNewViewController.swift in Sources */,
 				354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
