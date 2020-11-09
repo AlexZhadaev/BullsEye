@@ -14,11 +14,10 @@ class AboutAuthorNewView: UIView {
     let name = UITextField()
     let authorImage = UIImageView()
     let closeButton = UIButton()
-    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    let backgroundImage = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setup()
     }
     
@@ -49,7 +48,8 @@ class AboutAuthorNewView: UIView {
     }
     
     fileprivate func setup() {
-//        backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
+        backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
         info.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
