@@ -10,10 +10,22 @@ import UIKit
 
 class AboutAuthorNewViewController: UIViewController {
     
+    let rootView = AboutAuthorNewView()
+    
     override func loadView() {
         super.loadView()
         
-        view = AboutAuthorNewView()
+        view = rootView
+        setup()
     }
 
+    private func setup() {
+        
+        rootView.closeButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
+    
+    @objc
+    private func handleTap() {
+        dismiss(animated: true, completion: nil)
+    }
 }

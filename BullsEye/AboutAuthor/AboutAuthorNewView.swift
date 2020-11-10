@@ -42,7 +42,10 @@ class AboutAuthorNewView: UIView {
             authorImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 368.5),
             authorImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -104.5),
             authorImage.topAnchor.constraint(equalTo: topAnchor, constant: 45.5),
-            authorImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -179.5)
+            authorImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -179.5),
+            
+            closeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            closeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -45.5)
         ])
         
     }
@@ -52,27 +55,34 @@ class AboutAuthorNewView: UIView {
         backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
-        info.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
         info.translatesAutoresizingMaskIntoConstraints = false
         info.isUserInteractionEnabled = false
+        info.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
         info.backgroundColor = .clear
         info.textColor = .white
         info.font = UIFont(name: "Arial Rounded MT Bold", size: 16)
         
-        name.text = "Alex Zhadaev"
         name.translatesAutoresizingMaskIntoConstraints = false
         name.isUserInteractionEnabled = false
+        name.text = "Alex Zhadaev"
         name.textColor = .white
         name.font = UIFont(name: "Arial Rounded MT Bold", size: 16)
         
-        authorImage.image = UIImage(named: "authorphoto")
         authorImage.translatesAutoresizingMaskIntoConstraints = false
         authorImage.isUserInteractionEnabled = false
+        authorImage.image = UIImage(named: "authorphoto")
+        
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
+        closeButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
+        closeButton.setTitle("Back", for: .normal)
+        closeButton.setTitleColor(.brown, for: .normal)
         
         addSubview(backgroundImage)
         addSubview(info)
         addSubview(name)
         addSubview(authorImage)
+        addSubview(closeButton)
         setNeedsUpdateConstraints()
     }
     
