@@ -16,10 +16,10 @@
 		353E4574254DAFA600A27368 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 353E4573254DAFA500A27368 /* BullsEye.html */; };
 		353E458125531BF400A27368 /* AboutAuthorNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */; };
 		353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353E458325531E7700A27368 /* AboutAuthorNewView.swift */; };
-		354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AC25250BAB00B326DF /* AboutViewController.swift */; };
-		354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */; };
 		35CEB5852559E72D008BDF42 /* AboutNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CEB5842559E72D008BDF42 /* AboutNewViewController.swift */; };
 		35CEB5882559E753008BDF42 /* AboutNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CEB5872559E753008BDF42 /* AboutNewView.swift */; };
+		35CEB594255DB4D6008BDF42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CEB593255DB4D6008BDF42 /* MainViewController.swift */; };
+		35CEB597255DB4EC008BDF42 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CEB596255DB4EC008BDF42 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +34,10 @@
 		353E4573254DAFA500A27368 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorNewViewController.swift; sourceTree = "<group>"; };
 		353E458325531E7700A27368 /* AboutAuthorNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorNewView.swift; sourceTree = "<group>"; };
-		354DE4AC25250BAB00B326DF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 		35CEB5842559E72D008BDF42 /* AboutNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewViewController.swift; sourceTree = "<group>"; };
 		35CEB5872559E753008BDF42 /* AboutNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewView.swift; sourceTree = "<group>"; };
+		35CEB593255DB4D6008BDF42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		35CEB596255DB4EC008BDF42 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +72,10 @@
 			children = (
 				353E4576254DB5C000A27368 /* Support */,
 				351D16A024EFFB440049559D /* ViewController.swift */,
-				354DE4AC25250BAB00B326DF /* AboutViewController.swift */,
-				354DE4AF2525100000B326DF /* AboutAuthorViewController.swift */,
 				351D16A224EFFB440049559D /* Main.storyboard */,
-				35CEB58A2559E75D008BDF42 /* About */,
-				353E458625531E7E00A27368 /* AboutAuthor */,
+				35CEB599255DB4F1008BDF42 /* MainView */,
+				35CEB58A2559E75D008BDF42 /* AboutView */,
+				353E458625531E7E00A27368 /* AboutAuthorView */,
 				351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */,
 			);
 			path = BullsEye;
@@ -94,22 +93,31 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		353E458625531E7E00A27368 /* AboutAuthor */ = {
+		353E458625531E7E00A27368 /* AboutAuthorView */ = {
 			isa = PBXGroup;
 			children = (
 				353E458025531BF400A27368 /* AboutAuthorNewViewController.swift */,
 				353E458325531E7700A27368 /* AboutAuthorNewView.swift */,
 			);
-			path = AboutAuthor;
+			path = AboutAuthorView;
 			sourceTree = "<group>";
 		};
-		35CEB58A2559E75D008BDF42 /* About */ = {
+		35CEB58A2559E75D008BDF42 /* AboutView */ = {
 			isa = PBXGroup;
 			children = (
 				35CEB5842559E72D008BDF42 /* AboutNewViewController.swift */,
 				35CEB5872559E753008BDF42 /* AboutNewView.swift */,
 			);
-			path = About;
+			path = AboutView;
+			sourceTree = "<group>";
+		};
+		35CEB599255DB4F1008BDF42 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				35CEB593255DB4D6008BDF42 /* MainViewController.swift */,
+				35CEB596255DB4EC008BDF42 /* MainView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +197,10 @@
 				353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */,
 				35CEB5882559E753008BDF42 /* AboutNewView.swift in Sources */,
 				35CEB5852559E72D008BDF42 /* AboutNewViewController.swift in Sources */,
-				354DE4AD25250BAB00B326DF /* AboutViewController.swift in Sources */,
 				351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */,
+				35CEB597255DB4EC008BDF42 /* MainView.swift in Sources */,
 				353E458125531BF400A27368 /* AboutAuthorNewViewController.swift in Sources */,
-				354DE4B02525100000B326DF /* AboutAuthorViewController.swift in Sources */,
+				35CEB594255DB4D6008BDF42 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

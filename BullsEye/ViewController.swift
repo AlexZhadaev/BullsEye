@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         setupSlider()
     }
     
+    @IBAction func aboutView(_ sender: Any) {
+        let vc = MainViewController()
+        present(vc, animated: true)
+    }
+    
     @IBAction func showAlert() {
         let difference = abs(targetValue - currentValue)
         var points = 100 - difference
