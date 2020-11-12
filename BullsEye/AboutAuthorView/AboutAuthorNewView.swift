@@ -60,13 +60,13 @@ class AboutAuthorNewView: UIView {
         info.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
         info.backgroundColor = .clear
         info.textColor = .white
-        info.font = UIFont(name: "Arial Rounded MT Bold", size: 16)
+        info.font = UIFont(name: "arialroundedmtbold", size: 16)
         
         name.translatesAutoresizingMaskIntoConstraints = false
         name.isUserInteractionEnabled = false
         name.text = "Alex Zhadaev"
         name.textColor = .white
-        name.font = UIFont(name: "Arial Rounded MT Bold", size: 16)
+        name.font = UIFont(name: "arialroundedmtbold", size: 16)
         
         authorImage.translatesAutoresizingMaskIntoConstraints = false
         authorImage.isUserInteractionEnabled = false
@@ -76,7 +76,10 @@ class AboutAuthorNewView: UIView {
         closeButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
         closeButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
         closeButton.setTitle("Back", for: .normal)
-        closeButton.setTitleColor(.brown, for: .normal)
+        closeButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
+        closeButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 16)
+        closeButton.setTitleShadowColor(.black, for: .normal)
+        closeButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
         
         addSubview(backgroundImage)
         addSubview(info)
