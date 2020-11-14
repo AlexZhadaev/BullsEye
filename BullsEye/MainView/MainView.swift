@@ -43,9 +43,9 @@ class MainView: UIView {
         super.updateConstraints()
         NSLayoutConstraint.activate([
             headLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 151.5),
-            headLabel.trailingAnchor.constraint(equalTo: targetValueLabel.leadingAnchor, constant: -2),
+            headLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -201.5),
             headLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
-            headLabel.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -47),
+            headLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -281.5),
             
             targetValueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
             targetValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -162.5),
