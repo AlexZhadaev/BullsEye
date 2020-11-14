@@ -42,16 +42,17 @@ class MainView: UIView {
     override func updateConstraints() {
         super.updateConstraints()
         NSLayoutConstraint.activate([
-            webView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            webView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            webView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            webView.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20),
+            headLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 151.5),
+            headLabel.trailingAnchor.constraint(equalTo: targetValueLabel.leadingAnchor, constant: -2),
+            headLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
+            headLabel.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -47),
             
-            closeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            closeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            targetValueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
+            targetValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -162.5),
+            targetValueLabel.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -47),
             
-            aboutAuthorButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            aboutAuthorButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            slider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
         
     }
@@ -70,20 +71,11 @@ class MainView: UIView {
         hitMeButton.setTitleShadowColor(.black, for: .normal)
         hitMeButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
         
-        aboutAuthorButton.translatesAutoresizingMaskIntoConstraints = false
-        aboutAuthorButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
-        aboutAuthorButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
-        aboutAuthorButton.setTitle("About the author", for: .normal)
-        aboutAuthorButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        aboutAuthorButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
-        aboutAuthorButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 16)
-        aboutAuthorButton.setTitleShadowColor(.black, for: .normal)
-        aboutAuthorButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
         
         addSubview(backgroundImage)
-        addSubview(webView)
-        addSubview(closeButton)
-        addSubview(aboutAuthorButton)
+        addSubview(headLabel)
+        addSubview(targetValueLabel)
+        addSubview(slider)
         setNeedsUpdateConstraints()
     }
     
