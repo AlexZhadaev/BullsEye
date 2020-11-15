@@ -25,68 +25,40 @@ class AboutAuthorNewView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func updateConstraints() {
-        super.updateConstraints()
-        NSLayoutConstraint.activate([
-            
-            info.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 104.5),
-            info.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -316.5),
-            info.topAnchor.constraint(equalTo: topAnchor, constant: 44.5),
-            info.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130.5),
-            
-            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 399.5),
-            name.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -134.5),
-            name.topAnchor.constraint(equalTo: topAnchor, constant: 210.5),
-            name.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130.5),
-            
-            authorImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 368.5),
-            authorImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -104.5),
-            authorImage.topAnchor.constraint(equalTo: topAnchor, constant: 45.5),
-            authorImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -179.5),
-            
-            closeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            closeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -45.5)
-        ])
-        
-    }
-    
     fileprivate func setup() {
         
         backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
-        info.translatesAutoresizingMaskIntoConstraints = false
         info.isUserInteractionEnabled = false
         info.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."
         info.backgroundColor = .clear
         info.textColor = .white
         info.font = UIFont(name: "arialroundedmtbold", size: 16)
         
-        name.translatesAutoresizingMaskIntoConstraints = false
         name.isUserInteractionEnabled = false
         name.text = "Alex Zhadaev"
         name.textColor = .white
         name.font = UIFont(name: "arialroundedmtbold", size: 16)
         
-        authorImage.translatesAutoresizingMaskIntoConstraints = false
         authorImage.isUserInteractionEnabled = false
         authorImage.image = UIImage(named: "authorphoto")
         
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
-        closeButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
-        closeButton.setTitle("Back", for: .normal)
-        closeButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
-        closeButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 16)
-        closeButton.setTitleShadowColor(.black, for: .normal)
-        closeButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
+        closeButton.buttonSetup(backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Back", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
         
         addSubview(backgroundImage)
         addSubview(info)
         addSubview(name)
         addSubview(authorImage)
         addSubview(closeButton)
-        setNeedsUpdateConstraints()
+        
+        info.textViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 44.5, left: 104.5, bottom: -130.5, right: -316.5))
+        
+        name.textFieldConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 210.5, left: 399.5, bottom: -130.5, right: -134.5))
+        
+        authorImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 45.5, left: 368.5, bottom: -179.5, right: -104.5))
+        
+        closeButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 0, left: 0, bottom: -45.5, right: 0))
+        
     }
-    
 }
