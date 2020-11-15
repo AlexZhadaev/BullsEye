@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func aboutView(_ sender: Any) {
+//        let vc = AboutNewViewController()
         let vc = MainViewController()
         present(vc, animated: true)
     }

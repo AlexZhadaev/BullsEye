@@ -39,44 +39,27 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func updateConstraints() {
-        super.updateConstraints()
-        NSLayoutConstraint.activate([
-            headLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 151.5),
-            headLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -201.5),
-            headLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
-            headLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -281.5),
-            
-            targetValueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 63.5),
-            targetValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -162.5),
-            targetValueLabel.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -47),
-            
-            slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            slider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
-        ])
-        
-    }
-    
     fileprivate func setup() {
         
         backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
-        hitMeButton.translatesAutoresizingMaskIntoConstraints = false
-        hitMeButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
-        hitMeButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
-        hitMeButton.setTitle("Hit Me!", for: .normal)
-        hitMeButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
-        hitMeButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 20)
-        hitMeButton.setTitleShadowColor(.black, for: .normal)
-        hitMeButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
-        
+        hitMeButton.buttonSetup(backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Hit Me!", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
         
         addSubview(backgroundImage)
         addSubview(headLabel)
         addSubview(targetValueLabel)
         addSubview(slider)
-        setNeedsUpdateConstraints()
+        addSubview(hitMeButton)
+        
+        headLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 151.5, bottom: -281.5, right: -201.5))
+        
+        targetValueLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 0, bottom: -30, right: -162.5))
+        
+        slider.sliderConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 135.5, bottom: -205.5, right: -135.5))
+        
+        hitMeButton.buttonConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 193.5, left: 0, bottom: -144.5, right: 0))
+
     }
     
     func startNewRound() {

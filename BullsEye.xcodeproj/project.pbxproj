@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35119A3E2561ADEC00554240 /* SetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35119A3D2561ADEC00554240 /* SetupExtensions.swift */; };
 		351D169D24EFFB440049559D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D169C24EFFB440049559D /* AppDelegate.swift */; };
 		351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D169E24EFFB440049559D /* SceneDelegate.swift */; };
 		351D16A124EFFB440049559D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D16A024EFFB440049559D /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35119A3D2561ADEC00554240 /* SetupExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExtensions.swift; sourceTree = "<group>"; };
 		351D169924EFFB440049559D /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		351D169C24EFFB440049559D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		351D169E24EFFB440049559D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				353E4576254DB5C000A27368 /* Support */,
 				351D16A024EFFB440049559D /* ViewController.swift */,
+				35119A3D2561ADEC00554240 /* SetupExtensions.swift */,
 				351D16A224EFFB440049559D /* Main.storyboard */,
 				35CEB599255DB4F1008BDF42 /* MainView */,
 				35CEB58A2559E75D008BDF42 /* AboutView */,
@@ -196,6 +199,7 @@
 				351D169D24EFFB440049559D /* AppDelegate.swift in Sources */,
 				353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */,
 				35CEB5882559E753008BDF42 /* AboutNewView.swift in Sources */,
+				35119A3E2561ADEC00554240 /* SetupExtensions.swift in Sources */,
 				35CEB5852559E72D008BDF42 /* AboutNewViewController.swift in Sources */,
 				351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */,
 				35CEB597255DB4EC008BDF42 /* MainView.swift in Sources */,

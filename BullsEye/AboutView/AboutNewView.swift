@@ -25,59 +25,32 @@ class AboutNewView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func updateConstraints() {
-        super.updateConstraints()
-        NSLayoutConstraint.activate([
-            webView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            webView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            webView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            webView.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20),
-            
-            closeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            closeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            
-            aboutAuthorButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            aboutAuthorButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
-        ])
-        
-    }
-    
     fileprivate func setup() {
         
         backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
-        webView.translatesAutoresizingMaskIntoConstraints = false
         if let htmlPath = Bundle.main.path(forResource: "BullsEye", ofType: "html") {
             let url = URL(fileURLWithPath: htmlPath)
             let request = URLRequest(url: url)
             webView.load(request)
         }
         
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
-        closeButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
-        closeButton.setTitle("Close", for: .normal)
-        closeButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
-        closeButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 16)
-        closeButton.setTitleShadowColor(.black, for: .normal)
-        closeButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
+        closeButton.buttonSetup(backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Close", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
         
-        aboutAuthorButton.translatesAutoresizingMaskIntoConstraints = false
-        aboutAuthorButton.setBackgroundImage(UIImage(named: "Button-Normal"), for: .normal)
-        aboutAuthorButton.setBackgroundImage(UIImage(named: "Button-Highlighted"), for: .highlighted)
-        aboutAuthorButton.setTitle("About the author", for: .normal)
-        aboutAuthorButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        aboutAuthorButton.setTitleColor(#colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), for: .normal)
-        aboutAuthorButton.titleLabel?.font = UIFont(name: "arialroundedmtbold", size: 16)
-        aboutAuthorButton.setTitleShadowColor(.black, for: .normal)
-        aboutAuthorButton.titleLabel?.shadowOffset = CGSize(width: 0, height: 1)
+        aboutAuthorButton.buttonSetup(backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "About the author", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
         
         addSubview(backgroundImage)
         addSubview(webView)
         addSubview(closeButton)
         addSubview(aboutAuthorButton)
-        setNeedsUpdateConstraints()
+        
+        webView.webViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 20, left: 20, bottom: -100, right: -20))
+        
+        closeButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 0, left: 0, bottom: -30, right: 0))
+        
+        aboutAuthorButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -30, right: -20))
+
     }
     
 }
