@@ -44,7 +44,7 @@ class AboutAuthorNewView: UIView {
         authorImage.isUserInteractionEnabled = false
         authorImage.image = UIImage(named: "authorphoto")
         
-        closeButton.buttonSetup(backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Back", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
+        closeButton.buttonSetup(image: nil, backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Back", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
         
         addSubview(backgroundImage)
         addSubview(info)

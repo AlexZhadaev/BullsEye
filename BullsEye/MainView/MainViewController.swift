@@ -9,34 +9,34 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     let rootView = MainView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view = rootView
-        
-        restartGameButton()
+        setup()
     }
     
     private func setup() {
         rootView.aboutButton.addTarget(self, action: #selector(aboutViewController), for: .touchUpInside)
         rootView.hitMeButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
-        rootView.slider.addTarget(self, action: #selector(sliderMoved(_:)), for: .touchUpInside)
-        rootView.restartButton.addTarget(self, action: #selector(restartGameButton), for: .touchUpInside)
+        rootView.slider.addTarget(self, action: #selector(sliderMoved(_:)), for: .valueChanged)
+        rootView.restartButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+        restartGame()
     }
     
-
+    
     @objc
-    private func aboutViewController(_ sender: Any) {
+    private func aboutViewController() {
         let aboutViewController = AboutNewViewController()
         present(aboutViewController, animated: true)
     }
     
     @objc
     private func showAlert() {
-        let difference = abs(rootView.targetValue - rootView.currentValue)
+        let difference = abs(rootView.targetValue - rootView.sliderCurrentValue)
         var points = 100 - difference
         
         var title: String
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         } else if difference < 5 {
             title = "You almost had it!"
             if difference == 1 {
-                title = "Too close! 100 bonus points!"
+                title = "Too close! 50 bonus points!"
                 points += 50
             }
         } else if difference < 10 {
@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
         
         rootView.score += points
         
-        let message = "Your dot is \(rootView.currentValue)" + "\nYou scored \(points) points"
+        let message = "Your dot is \(rootView.sliderCurrentValue)" + "\nYou scored \(points) points"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: {
             action in
@@ -70,11 +70,11 @@ class MainViewController: UIViewController {
     @objc
     private func sliderMoved(_ slider: UISlider) {
         let roundedValue = slider.value.rounded()
-        rootView.currentValue = Int(roundedValue)
+        rootView.sliderCurrentValue = Int(roundedValue)
     }
     
     @objc
-    private func restartGameButton() {
+    private func restartGame() {
         rootView.score = 0
         rootView.round = 0
         rootView.startNewRound()

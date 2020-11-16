@@ -9,11 +9,44 @@
 import UIKit
 import WebKit
 
+// MARK: Label Setup
 
-// MARK: Buttons Setup
+extension UILabel {
+    func labelSetup(text: String?, textColor: UIColor?, font: String?, fontSize: Int?, shadowColor: UIColor?, shadowOffset: CGSize?) {
+        
+        if let text = text {
+            self.text = text
+        }
+        
+        if let textColor = textColor {
+            self.textColor = textColor
+        }
+        
+        if let font = font {
+            if let fontSize = fontSize {
+                self.font = UIFont(name: font, size: CGFloat(fontSize))
+            }
+        }
+        
+        if let shadowColor = shadowColor {
+            self.shadowColor = shadowColor
+        }
+        
+        if let shadowOffset = shadowOffset {
+            self.shadowOffset = shadowOffset
+        }
+        
+    }
+}
+
+// MARK: Button Setup
 
 extension UIButton {
-    func buttonSetup(backgroundImageNormal: String?, backgroundImageHighlighted: String?, title: String?, color: UIColor?, font: String?, fontSize: Int?, shadowColor: UIColor?, shadowOffset: CGSize?, edgeInsets: UIEdgeInsets?) {
+    func buttonSetup(image: String?, backgroundImageNormal: String?, backgroundImageHighlighted: String?, title: String?, color: UIColor?, font: String?, fontSize: Int?, shadowColor: UIColor?, shadowOffset: CGSize?, edgeInsets: UIEdgeInsets?) {
+        
+        if let image = image {
+            self.setImage(UIImage(named: image), for: .normal)
+        }
         
         if let backgroundImageNormal = backgroundImageNormal {
             self.setBackgroundImage(UIImage(named: backgroundImageNormal), for: .normal)
