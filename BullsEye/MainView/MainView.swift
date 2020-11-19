@@ -9,7 +9,7 @@
 import UIKit
 
 class MainView: UIView {
-
+    
     let backgroundImage = UIImageView()
     let hitMeButton = UIButton()
     let aboutButton = UIButton()
@@ -20,15 +20,15 @@ class MainView: UIView {
     let zeroLabel = UILabel()
     let hundredLabel = UILabel()
     
-    var sliderCurrentValue = 0
-    var targetValue = 0
-    var score = 0
-    var round = 0
-    
     var slider = UISlider()
     var targetValueLabel = UILabel()
     var scoreValueLabel = UILabel()
     var roundValueLabel = UILabel()
+    
+    var sliderCurrentValue = 0
+    var targetValue = 0
+    var score = 0
+    var round = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,7 +67,7 @@ class MainView: UIView {
         aboutButton.buttonSetup(image: "InfoButton", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, edgeInsets: nil)
         
         restartButton.buttonSetup(image: "StartOverIcon", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, edgeInsets: nil)
-    
+        
         setupSlider()
         
         addSubview(backgroundImage)
@@ -84,18 +84,20 @@ class MainView: UIView {
         addSubview(restartButton)
         addSubview(aboutButton)
         
+        backgroundImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        
         headLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 151.5, bottom: -281.5, right: -201.5))
         
         targetValueLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 0, bottom: 0, right: -162.5))
         
-        zeroLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 95.5, bottom: 0, right: 0))
+        zeroLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 95.5, bottom: 0, right: 0), size: CGSize(width: 30, height: 30))
         
-        hundredLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 0, bottom: 0, right: -95.5))
+        hundredLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 0, bottom: 0, right: -95.5), size: CGSize(width: 30, height: 30))
         
-        slider.sliderConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 135.5, bottom: -205.5, right: -135.5))
+        slider.sliderConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: zeroLabel.safeAreaLayoutGuide.trailingAnchor, bottom: nil, trailing: hundredLabel.safeAreaLayoutGuide.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 10, bottom: 0, right: -10), size: CGSize(width: 0, height: 30))
         
         hitMeButton.buttonConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 193.5, left: 0, bottom: -144.5, right: 0))
-
+        
         restartButton.buttonConstraints(top: nil, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 115.5, bottom: -63.5, right: 0))
         
         scoreTextLabel.labelConstraints(top: nil, leading: restartButton.safeAreaLayoutGuide.trailingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 56, bottom: -63.5, right: 0))
@@ -131,19 +133,19 @@ class MainView: UIView {
         
         let roundedValue = slider.value.rounded()
         sliderCurrentValue = Int(roundedValue)
-
+        
         let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
         slider.setThumbImage(thumbImageNormal, for: .normal)
-
+        
         let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
         slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
-
+        
         let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-
+        
         let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")
         let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
         slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
-
+        
         let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight")
         let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
         slider.setMaximumTrackImage(trackRightResizable, for: .normal)

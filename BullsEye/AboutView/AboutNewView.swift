@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class AboutNewView: UIView {
-
+    
     let backgroundImage = UIImageView()
     let webView = WKWebView()
     let closeButton = UIButton()
@@ -45,12 +45,14 @@ class AboutNewView: UIView {
         addSubview(closeButton)
         addSubview(aboutAuthorButton)
         
+        backgroundImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        
         webView.webViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 20, left: 20, bottom: -100, right: -20))
         
         closeButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 0, left: 0, bottom: -30, right: 0))
         
         aboutAuthorButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -30, right: -20))
-
+        
     }
     
 }

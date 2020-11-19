@@ -12,13 +12,20 @@ class AboutAuthorNewViewController: UIViewController {
     
     let rootView = AboutAuthorNewView()
     
-    override func loadView() {
-        super.loadView()
-        
-        view = rootView
+    init() {
+        super.init(nibName: .none, bundle: .none)
         setup()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
+        view = rootView
+    }
+    
     private func setup() {
         
         rootView.closeButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
