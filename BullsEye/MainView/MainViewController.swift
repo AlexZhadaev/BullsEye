@@ -12,11 +12,18 @@ class MainViewController: UIViewController {
     
     let rootView = MainView()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view = rootView
+    init() {
+        super.init(nibName: .none, bundle: .none)
         setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
+        view = rootView
     }
     
     private func setup() {
@@ -79,4 +86,5 @@ class MainViewController: UIViewController {
         rootView.round = 0
         rootView.startNewRound()
     }
+    
 }
