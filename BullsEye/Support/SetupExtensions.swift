@@ -35,14 +35,13 @@ extension UILabel {
         if let shadowOffset = shadowOffset {
             self.shadowOffset = shadowOffset
         }
-        
     }
 }
 
 // MARK: Button Setup
 
 extension UIButton {
-    func buttonSetup(image: String?, backgroundImageNormal: String?, backgroundImageHighlighted: String?, title: String?, color: UIColor?, font: String?, fontSize: Int?, shadowColor: UIColor?, shadowOffset: CGSize?, edgeInsets: UIEdgeInsets?) {
+    func buttonSetup(image: String?, backgroundImageNormal: String?, backgroundImageHighlighted: String?, title: String?, color: UIColor?, font: String?, fontSize: Int?, shadowColor: UIColor?, shadowOffset: CGSize?, reversesTitle: Bool?, edgeInsets: UIEdgeInsets?) {
         
         if let image = image {
             self.setImage(UIImage(named: image), for: .normal)
@@ -78,10 +77,13 @@ extension UIButton {
             self.titleLabel?.shadowOffset = shadowOffset
         }
         
+        if reversesTitle != nil {
+            self.reversesTitleShadowWhenHighlighted = true
+        }
+        
         if let edgeInsets = edgeInsets {
             self.contentEdgeInsets = edgeInsets
         }
-        
     }
 }
 

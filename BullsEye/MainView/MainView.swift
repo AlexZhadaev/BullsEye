@@ -43,30 +43,29 @@ class MainView: UIView {
         
         let shadowOffset = CGSize(width: 0, height: 1)
         
-        backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
-        headLabel.labelSetup(text: "Put the Bull's Eye as close as you can to:", textColor: .white, font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: shadowOffset)
+        headLabel.labelSetup(text: "Put the Bull's Eye as close as you can to:", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
         targetValueLabel.labelSetup(text: "100", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
-        zeroLabel.labelSetup(text: "0", textColor: .white, font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: shadowOffset)
+        zeroLabel.labelSetup(text: "0", textColor: .white, font: "arialroundedmtbold", fontSize: 18, shadowColor: .black, shadowOffset: shadowOffset)
         
-        hundredLabel.labelSetup(text: "100", textColor: .white, font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: shadowOffset)
+        hundredLabel.labelSetup(text: "100", textColor: .white, font: "arialroundedmtbold", fontSize: 18, shadowColor: .black, shadowOffset: shadowOffset)
         
-        scoreTextLabel.labelSetup(text: "Score:", textColor: .white, font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: shadowOffset)
+        scoreTextLabel.labelSetup(text: "Score:", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
         scoreValueLabel.labelSetup(text: "", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
-        roundTextLabel.labelSetup(text: "Round:", textColor: .white, font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: shadowOffset)
+        roundTextLabel.labelSetup(text: "Round:", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
         roundValueLabel.labelSetup(text: "", textColor: .white, font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset)
         
-        hitMeButton.buttonSetup(image: nil, backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Hit Me!", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset, edgeInsets: nil)
+        hitMeButton.buttonSetup(image: nil, backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Hit Me!", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 20, shadowColor: .black, shadowOffset: shadowOffset, reversesTitle: true, edgeInsets: nil)
         
-        aboutButton.buttonSetup(image: "InfoButton", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, edgeInsets: nil)
+        aboutButton.buttonSetup(image: "InfoButton", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, reversesTitle: true, edgeInsets: nil)
         
-        restartButton.buttonSetup(image: "StartOverIcon", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, edgeInsets: nil)
+        restartButton.buttonSetup(image: "StartOverIcon", backgroundImageNormal: "SmallButton", backgroundImageHighlighted: nil, title: nil, color: nil, font: nil, fontSize: nil, shadowColor: nil, shadowOffset: nil, reversesTitle: true, edgeInsets: nil)
         
         setupSlider()
         
@@ -86,29 +85,29 @@ class MainView: UIView {
         
         backgroundImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         
-        headLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 151.5, bottom: -281.5, right: -201.5))
+        headLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: targetValueLabel.safeAreaLayoutGuide.leadingAnchor, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 63.5, left: 0, bottom: 0, right: -10), size: CGSize(width: 0, height: 30))
         
-        targetValueLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 0, bottom: 0, right: -162.5))
+        targetValueLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: headLabel.safeAreaLayoutGuide.trailingAnchor, bottom: nil, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 63.5, left: 10, bottom: 0, right: 0), size: CGSize(width: 30, height: 30))
         
-        zeroLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 95.5, bottom: 0, right: 0), size: CGSize(width: 30, height: 30))
+        zeroLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 85, bottom: 0, right: 0), size: CGSize(width: 12, height: 30))
         
-        hundredLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 0, bottom: 0, right: -95.5), size: CGSize(width: 30, height: 30))
+        hundredLabel.labelConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 0, bottom: 0, right: -80), size: CGSize(width: 35, height: 30))
         
-        slider.sliderConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: zeroLabel.safeAreaLayoutGuide.trailingAnchor, bottom: nil, trailing: hundredLabel.safeAreaLayoutGuide.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 143.5, left: 10, bottom: 0, right: -10), size: CGSize(width: 0, height: 30))
+        slider.sliderConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: zeroLabel.safeAreaLayoutGuide.trailingAnchor, bottom: nil, trailing: hundredLabel.safeAreaLayoutGuide.leadingAnchor, centerY: nil, centerX: self.centerXAnchor, padding: .init(top: 143.5, left: 10, bottom: 0, right: -10), size: CGSize(width: 0, height: 30))
         
-        hitMeButton.buttonConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 193.5, left: 0, bottom: -144.5, right: 0))
+        hitMeButton.buttonConstraints(top: slider.safeAreaLayoutGuide.bottomAnchor, leading: nil, bottom: nil, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 40, left: 0, bottom: 0, right: 0))
         
-        restartButton.buttonConstraints(top: nil, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 115.5, bottom: -63.5, right: 0))
+        restartButton.buttonConstraints(top: nil, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 80, bottom: -63.5, right: 0), size: CGSize(width: 30, height: 30))
         
-        scoreTextLabel.labelConstraints(top: nil, leading: restartButton.safeAreaLayoutGuide.trailingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 56, bottom: -63.5, right: 0))
+        scoreTextLabel.labelConstraints(top: nil, leading: restartButton.safeAreaLayoutGuide.trailingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 86, bottom: -63.5, right: 0), size: CGSize(width: 0, height: 30))
         
-        scoreValueLabel.labelConstraints(top: nil, leading: scoreTextLabel.trailingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 5, bottom: -63.5, right: 0))
+        scoreValueLabel.labelConstraints(top: nil, leading: scoreTextLabel.trailingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: nil, padding: .init(top: 0, left: 5, bottom: -63.5, right: 0), size: CGSize(width: 0, height: 30))
         
-        roundTextLabel.labelConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: roundValueLabel.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -5))
+        roundTextLabel.labelConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: roundValueLabel.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -5), size: CGSize(width: 0, height: 30))
         
-        roundValueLabel.labelConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: aboutButton.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -70))
+        roundValueLabel.labelConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: aboutButton.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -100), size: CGSize(width: 0, height: 30))
         
-        aboutButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -115.5))
+        aboutButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: -63.5, right: -80), size: CGSize(width: 30, height: 30))
     }
     
     func startNewRound() {
@@ -116,6 +115,9 @@ class MainView: UIView {
         sliderCurrentValue = 50
         slider.value = Float(sliderCurrentValue)
         round += 1
+        UIView.transition(with: targetValueLabel, duration: 0.75, options: .transitionFlipFromBottom, animations: {})
+        UIView.transition(with: roundValueLabel, duration: 0.75, options: .transitionFlipFromBottom, animations: {})
+        UIView.transition(with: scoreValueLabel, duration: 0.75, options: .transitionFlipFromBottom, animations: {})
         updateLabels()
     }
     

@@ -27,7 +27,6 @@ class AboutAuthorNewView: UIView {
     
     fileprivate func setup() {
         
-        backgroundImage.frame = UIScreen.main.bounds
         backgroundImage.image = UIImage(named: "Background")
         
         info.isUserInteractionEnabled = false
@@ -44,7 +43,7 @@ class AboutAuthorNewView: UIView {
         authorImage.isUserInteractionEnabled = false
         authorImage.image = UIImage(named: "authorphoto")
         
-        closeButton.buttonSetup(image: nil, backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Back", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), edgeInsets: nil)
+        closeButton.buttonSetup(image: nil, backgroundImageNormal: "Button-Normal", backgroundImageHighlighted: "Button-Highlighted", title: "Back", color: #colorLiteral(red: 0.3764705882, green: 0.1176470588, blue: 0, alpha: 1), font: "arialroundedmtbold", fontSize: 16, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 1), reversesTitle: true, edgeInsets: nil)
         
         addSubview(backgroundImage)
         addSubview(info)
@@ -54,11 +53,11 @@ class AboutAuthorNewView: UIView {
         
         backgroundImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         
-        info.textViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 44.5, left: 104.5, bottom: -130.5, right: -316.5))
+        info.textViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: authorImage.safeAreaLayoutGuide.leadingAnchor, centerY: nil, centerX: nil, padding: .init(top: 45.5, left: 85.5, bottom: -130.5, right: -15))
         
-        name.textFieldConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 210.5, left: 399.5, bottom: -130.5, right: -134.5))
+        name.textFieldConstraints(top: authorImage.safeAreaLayoutGuide.bottomAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 10, left: 0, bottom: 0, right: -105), size: CGSize(width: 135, height: 30))
         
-        authorImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: self.safeAreaLayoutGuide.leadingAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 45.5, left: 368.5, bottom: -179.5, right: -104.5))
+        authorImage.imageViewConstraints(top: self.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: self.safeAreaLayoutGuide.trailingAnchor, centerY: nil, centerX: nil, padding: .init(top: 55, left: 0, bottom: 0, right: -85.5), size: CGSize(width: 200, height: 160))
         
         closeButton.buttonConstraints(top: nil, leading: nil, bottom: self.safeAreaLayoutGuide.bottomAnchor, trailing: nil, centerY: nil, centerX: self.safeAreaLayoutGuide.centerXAnchor, padding: .init(top: 0, left: 0, bottom: -45.5, right: 0))
         

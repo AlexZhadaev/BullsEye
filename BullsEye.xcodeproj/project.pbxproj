@@ -10,7 +10,6 @@
 		35119A3E2561ADEC00554240 /* SetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35119A3D2561ADEC00554240 /* SetupExtensions.swift */; };
 		351D169D24EFFB440049559D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D169C24EFFB440049559D /* AppDelegate.swift */; };
 		351D169F24EFFB440049559D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D169E24EFFB440049559D /* SceneDelegate.swift */; };
-		351D16A124EFFB440049559D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D16A024EFFB440049559D /* ViewController.swift */; };
 		351D16A624EFFB4B0049559D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A524EFFB4B0049559D /* Assets.xcassets */; };
 		351D16A924EFFB4B0049559D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351D16A724EFFB4B0049559D /* LaunchScreen.storyboard */; };
 		353E4574254DAFA600A27368 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 353E4573254DAFA500A27368 /* BullsEye.html */; };
@@ -27,7 +26,6 @@
 		351D169924EFFB440049559D /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		351D169C24EFFB440049559D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		351D169E24EFFB440049559D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		351D16A024EFFB440049559D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		351D16A524EFFB4B0049559D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		351D16A824EFFB4B0049559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		351D16AA24EFFB4B0049559D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				353E4576254DB5C000A27368 /* Support */,
-				351D16A024EFFB440049559D /* ViewController.swift */,
-				35119A3D2561ADEC00554240 /* SetupExtensions.swift */,
 				35CEB599255DB4F1008BDF42 /* MainView */,
 				35CEB58A2559E75D008BDF42 /* AboutView */,
 				353E458625531E7E00A27368 /* AboutAuthorView */,
@@ -89,6 +85,7 @@
 				351D16A524EFFB4B0049559D /* Assets.xcassets */,
 				351D16AA24EFFB4B0049559D /* Info.plist */,
 				353E4573254DAFA500A27368 /* BullsEye.html */,
+				35119A3D2561ADEC00554240 /* SetupExtensions.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -147,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Жадаев Алексей";
 				TargetAttributes = {
 					351D169824EFFB440049559D = {
@@ -191,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				351D16A124EFFB440049559D /* ViewController.swift in Sources */,
 				351D169D24EFFB440049559D /* AppDelegate.swift in Sources */,
 				353E458425531E7700A27368 /* AboutAuthorNewView.swift in Sources */,
 				35CEB5882559E753008BDF42 /* AboutNewView.swift in Sources */,
@@ -244,6 +240,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -304,6 +301,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
