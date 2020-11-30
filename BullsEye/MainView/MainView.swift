@@ -39,7 +39,7 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup() {
+    private func setup() {
         
         let shadowOffset = CGSize(width: 0, height: 1)
         
@@ -121,13 +121,13 @@ class MainView: UIView {
         updateLabels()
     }
     
-    fileprivate func updateLabels() {
+    private func updateLabels() {
         targetValueLabel.text = String(targetValue)
         scoreValueLabel.text = String(score)
         roundValueLabel.text = String(round)
     }
     
-    fileprivate func setupSlider() {
+    private func setupSlider() {
         
         slider.minimumValue = 0
         

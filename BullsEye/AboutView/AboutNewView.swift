@@ -25,7 +25,7 @@ class AboutNewView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup() {
+    private func setup() {
         
         backgroundImage.image = UIImage(named: "Background")
         
